@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./src/app
+      dockerfile: Dockerfile
+    volumes:
+      - ./model:/app/model  # 挂载模型目录
+    ports:
+      - "8001:8000"  # 将主机的8000端口改为8001
