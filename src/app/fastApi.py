@@ -5,6 +5,7 @@ from torchvision import transforms
 from fastapi import FastAPI, File, UploadFile
 from PIL import Image
 import io
+import os
 
 
 class ConvNet(nn.Module):
@@ -28,7 +29,9 @@ class ConvNet(nn.Module):
 
 app = FastAPI()
 
-model_path = "../model/mnist-0.0.1.pt"
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, "../../model/mnist-0.0.1.pt")
+
 input_size = 28 * 28
 n_kernels = 6
 output_size = 10
@@ -49,7 +52,6 @@ async def predict(file: UploadFile = File(...)):
     image = transform(image)
     image = image.unsqueeze(0)
 
-    # 预测
     with torch.no_grad():
         output = model(image)
         prediction = output.argmax(dim=1, keepdim=True).item()
@@ -60,4 +62,4 @@ async def predict(file: UploadFile = File(...)):
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)

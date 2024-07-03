@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 import io
 from torchvision import transforms
 
-API_URL = "http://127.0.0.1:8000/api/v1/predict"
+API_URL = "http://127.0.0.1:8001/api/v1/predict"
 
 transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.1307,), (0.3081,))])
 

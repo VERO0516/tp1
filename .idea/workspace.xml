@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a605e472-d21f-480a-b8ea-bc9c114fb801" name="Changes" comment="" />
+    <list default="true" id="a605e472-d21f-480a-b8ea-bc9c114fb801" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/fastApi.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/fastApi.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +38,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\veron\PycharmProjects\TP1" />
       <recent name="C:\Users\veron\PycharmProjects\TP1\src\app" />
       <recent name="C:\Users\veron\PycharmProjects\TP1\model" />
       <recent name="C:\Users\veron\PycharmProjects\TP1\src\model" />
@@ -67,6 +76,18 @@
       <option name="presentableId" value="Default" />
       <updated>1719302038890</updated>
     </task>
+    <task id="LOCAL-00001" summary="v1">
+      <created>1719579928474</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719579928474</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v1" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1" />
   </component>
 </project>

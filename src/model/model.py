@@ -76,10 +76,10 @@ def train(model, train_loader, optimizer, device, perm=torch.arange(0, 784).long
             if isinstance(model, MLP):
                 data = data.view(-1, 28 * 28)
             else:
-                # 对于CNN，应用像素排列
-                data = data.view(-1, 28 * 28)  # 展平成二维
-                data = data[:, perm]  # 应用排列
-                data = data.view(-1, 1, 28, 28)  # 重新转换为四维
+
+                data = data.view(-1, 28 * 28)
+                data = data[:, perm]
+                data = data.view(-1, 1, 28, 28)
 
             optimizer.zero_grad()
             output = model(data)
@@ -104,23 +104,22 @@ def test(model, test_load, device, perm=torch.arange(0, 784).long()):
     test_loss = 0
     correct = 0
 
-    with torch.no_grad():  # 禁用梯度计算
+    with torch.no_grad():
         for data, target in test_load:
             data, target = data.to(device), target.to(device)
 
             if isinstance(model, MLP):
                 data = data.view(-1, 28 * 28)
             else:
-                # 对于CNN，应用像素排列
                 data = data.view(-1, 28 * 28)
                 data = data[:, perm]
                 data = data.view(-1, 1, 28, 28)
 
             output = model(data)
-            test_loss += F.cross_entropy(output, target, reduction='sum').item()  # 累积批次损失
+            test_loss += F.cross_entropy(output, target, reduction='sum').item()
 
             pred = output.argmax(dim=1, keepdim=True)
-            correct += pred.eq(target.view_as(pred)).sum().item()  # 累积正确预测数
+            correct += pred.eq(target.view_as(pred)).sum().item()
 
     test_loss /= len(test_load.dataset)
     accuracy = 100. * correct / len(test_load.dataset)

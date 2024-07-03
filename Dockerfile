@@ -8,6 +8,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app
 
-EXPOSE 8000
+EXPOSE 8501
 
-CMD ["uvicorn", "fastApi:app", "--host", "0.0.0.0", "--port", "8001"]
+CMD ["streamlit", "run", "app.py"]
